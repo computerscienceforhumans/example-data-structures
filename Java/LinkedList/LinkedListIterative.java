@@ -27,5 +27,10 @@ public class LinkedListIterative {
          * add the second thing
          * add everything else
          */
+        if(head == null) {
+            head = new Node(addMe);
+            return;
+        }
+        
     }
 }
