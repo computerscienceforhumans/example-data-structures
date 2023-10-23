@@ -37,5 +37,11 @@ public class LinkedListIterative {
             return;
         }
         
+        Node currentNode = head.next;
+        while(currentNode.next != null) {
+            currentNode = currentNode.next;
+        }
+        
+        currentNode.next = new Node(addMe);
     }
 }
