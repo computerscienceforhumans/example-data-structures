@@ -22,26 +22,33 @@ public class LinkedListIterative {
     }
 
     public void add(int addMe) {
-        /*
-         * add the first thing
-         * add the second thing
-         * add everything else
-         */
-        if(head == null) {
+        if(firstNodeIsNull()) {
             head = new Node(addMe);
             return;
         }
 
-        if(head.next == null) {
+        if(secondNodeIsNull()) {
             head.next = new Node(addMe);
             return;
         }
         
         Node currentNode = head.next;
-        while(currentNode.next != null) {
+        while(notAtEndOfList(currentNode)) {
             currentNode = currentNode.next;
         }
         
         currentNode.next = new Node(addMe);
+    }
+
+    private boolean notAtEndOfList(Node currentNode) {
+        return currentNode.next != null;
+    }
+
+    private boolean secondNodeIsNull() {
+        return head.next == null;
+    }
+    
+    private boolean firstNodeIsNull() {
+        return head == null;
     }
 }
