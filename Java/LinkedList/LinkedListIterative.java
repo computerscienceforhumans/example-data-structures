@@ -31,6 +31,11 @@ public class LinkedListIterative {
             head = new Node(addMe);
             return;
         }
+
+        if(head.next == null) {
+            head.next = new Node(addMe);
+            return;
+        }
         
     }
 }
